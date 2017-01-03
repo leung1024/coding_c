@@ -11,7 +11,8 @@
 
 typedef int Status;
 typedef int ElemType;
-typedef struct {
+
+struct SqList {
     ElemType    *elem;
     int         length;
     int         listsize;
@@ -20,4 +21,11 @@ typedef struct {
 Status IinitList_Sq(struct SqList &L);
 Status ListInsert_Sq(struct SqList &L, int i, ElemType &e);
 Status ListDelete_Sq(struct SqList &L, int i, ElemType &e);
-int LocateElem_Sq(struct SqList L, ElemenType e, Status (*compare)(ElemType, ElemType));
+int LocateElem_Sq(
+        struct SqList L,
+        ElemType e,
+        Status (*compare)(ElemType, ElemType));
+void MergeList_Sq(
+        struct SqList La,
+        struct SqList Lb,
+        struct SqList Lc);
