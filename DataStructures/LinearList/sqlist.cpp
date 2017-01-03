@@ -43,3 +43,28 @@ Status ListDelete_Sq(SqList &L, int i, ElemType e) {
 
 }
 
+//查找
+int LocateElem_Sq(SqList L, ElemType e,
+                    Status (*compare)(ElemType, ElemType)){
+    i = 1;          //i的初值为第一个元素
+    p = L.elem;
+    while(!i <= L.length && !(*compare)(*p++, e)) ++i;
+    if(i <= L.length) return i;
+    else return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
