@@ -65,8 +65,8 @@ Status MergeList_L(
     while (pa && pb) {
         if (pa->data <= pb->data){
             pc->next = pa;
-            pc = pc->next;
-            pa = pa->next;
+            pc = pc->next; // 更新pc指向的位置
+            pa = pa->next; // 更新pa指向的位置
         }
         else {
             pc->next = pb;
@@ -75,5 +75,10 @@ Status MergeList_L(
         }
     }
 
+    pc->next = pa ? pa : pb; // 插入剩余
+    free(Lb);
+    free(La);
 }
+
+
 
