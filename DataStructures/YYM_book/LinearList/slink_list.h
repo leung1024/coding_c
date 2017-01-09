@@ -8,4 +8,4 @@ typedef struct {
 }component, SLinkList[MAXSIZE];
 
 int LocateElem_SL(SLinkList S, ElemType e);
-
+void InitSpace_SL(SLinkList &space);
